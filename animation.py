@@ -22,11 +22,16 @@ y = np.linspace(0, 2 * np.pi, 100).reshape(-1, 1)
 # current frame; here we are just animating one artist, the image, in
 # each frame
 ims = []
+ims2 = []
+
 for i in range(100):
     x += np.pi / 15.
-    y += np.pi / 20.
+    y += np.pi / 15.
     im = plt.imshow(f(x, y), cmap='Blues', animated=True)
+    im2 = plt.imshow(z(x, y), cmap='RdPu', animated=False)
+
     ims.append([im])
+    ims.append([im2])
 
 ani = animation.ArtistAnimation(fig, ims, interval=50, blit=True,
                                 repeat_delay=1000)
