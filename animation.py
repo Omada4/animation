@@ -39,8 +39,8 @@ for i in range(130):
 ani = animation.ArtistAnimation(fig, ims, interval=50, blit=True,repeat_delay=5000)
 
 # plt.imsave(ph + "/Animation_Omada_4.mp4", ims)
-plt.show()
+#plt.show()
 ani.save(ph + '/Animation_Omada_4.mp4')
 # mywriter = animation.FFMpegWriter()
 # ani.save(ph + "Animation_Omada_4a.mp4", writer=mywriter)
-# plt.show()
+plt.show()
