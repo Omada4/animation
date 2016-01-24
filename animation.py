@@ -45,4 +45,4 @@ ani = animation.ArtistAnimation(fig, ims, interval=50, blit=True,
 
 ani.save(ph+"/dynamic_images.mp4")
 
-#plt.show()
+plt.show()
