@@ -42,7 +42,7 @@ ims.append([im2])
 ani = animation.ArtistAnimation(fig, ims, interval=50, blit=True,
                                 repeat_delay=1000)
 
+
 ani.save(ph+"/dynamic_images.mp4")
 
-
-plt.show()
+#plt.show()
