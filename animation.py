@@ -1,14 +1,9 @@
-
-#!/usr/bin/env python
-"""
-An animated image
-"""
 import os
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
-ph = os.path.expanduser('~/public_html')
 
+ph = os.path.expanduser('~/public_html')
 fig = plt.figure()
 
 
@@ -25,24 +20,23 @@ y = np.linspace(0, 2 * np.pi, 100).reshape(-1, 1)
 # current frame; here we are just animating one artist, the image, in
 # each frame
 ims = []
-ims2 = []
 
-ims3 = []
 
-for i in range(100):
+for i in range(130):
     x += np.pi / 15.
     y += np.pi /20.
-    im = plt.imshow(f(x, y), cmap='Blues', animated=True)
-    im2 = plt.imshow(z(x, y), cmap='RdPu', animated=False)
-#    im3 = plt.imshow(z(x,y), cmap='bone', animated=True)
- 
-ims.append([im])
-ims.append([im2])
-#ims.append([im3])
-ani = animation.ArtistAnimation(fig, ims, interval=50, blit=True,
-                                repeat_delay=1000)
+    im = plt.imshow(z(x, y), cmap= 'bwr', animated=True)
+    im2 = plt.imshow(z(x, y), cmap= 'gray', animated=True)
+    im3 = plt.imshow(z(x,y), cmap= 'bone', animated=False)
+    ims.append([im])
+    ims.append([im2])
+    ims.append([im3])
 
 
-ani.save(ph+"/dynamic_images.mp4")
+ani = animation.ArtistAnimation(fig, ims, interval=50, blit=True,repeat_delay=5000)
 
-plt.show()
+
+ani.save(ph + "/Animation_Omada_4.mp4")
+# mywriter = animation.FFMpegWriter()
+# ani.save(ph + "Animation_Omada_4a.mp4", writer=mywriter)
+# plt.show()
